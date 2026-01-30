@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main-section {
+    position: relative;
+    min-height: 100vh;
+}
+
+.logo-section {
+    width: 53.5%;
+    text-align: center;
+    padding: 110px 90px;
+    border-right: 2px solid #dbdbdb;
+}
+
+.instagram_logo {
+    width: 80px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo-section p {
+    font-size: 35px;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif;
+}
+.logo-section p span {
+    background: linear-gradient(90deg, #dc872c 0%, #e6683c 25%, #e73b54 50%, #f30765 75%, #f700a9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.instagram_logo2 {
+    width: 340px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.login-section {
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 15%;
+    right: 3%;
+    width: 500px;
+    text-align: center;
+}
+
+.login-box h4 {
+    margin-bottom: 23px;
+    text-align: left;
+}
+
+.login-section input {
+    width: 100%; 
+    height: 55px;
+    border-radius: 12px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    background-color: #fafafa;
+}
+
+.login-section button {
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid #dbdbdb;
+    background: #0095f6;
+    color: white;
+    font-weight: bold;
+    margin: 5px 0;
+    cursor: pointer;
+}
+button:hover {
+    border: 2px solid #494949;
+}
+
+.no-border-button button {
+    background: white;
+    border: none;
+    color: #494949; 
+    margin-bottom: 30px;
+}
+.no-border-button button:hover {
+    border: 2px solid #494949;
+}
+
+.login-section a:last-of-type button {
+    background: white;
+    color: #0095f6;
+    border: 1px solid #0095f6;
+}
+.login-section a:last-of-type button:hover {
+    border: 2px solid #030179;
+}
+
+ .login-section a:nth-of-type(3) button {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #0095f6;
+ }
+.login-section a:nth-of-type(3) button:hover {
+    border: 2px solid #030179;
+}
+
+
+.meta-brand {
+    width: 70px;
+    margin-top: 20px;
+}
+
+
+.footer {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #737373;
+    font-size: 10px;
+    padding: 20px 0;
+}
+
+.footer p {
+    word-spacing: 8px;
+    margin-top: 7px;
+}
+
+.footer hr {
+    padding: 0;
+    margin-top: -20px;
+    border: 0.5px solid rgb(234, 220, 220);
+}
