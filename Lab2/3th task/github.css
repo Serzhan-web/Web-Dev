@@ -23,7 +23,7 @@ header {
     width: 1200px;
     margin: 0 auto;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 header nav ul li a {
@@ -31,15 +31,18 @@ header nav ul li a {
 }
 
 header img {
-    width: 62px;
-    height: 36px;
+    width: 55px;
+    height: 30px;
+    color: #565757;
+    margin-top: -10px;
+    margin-right: -30px;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-self: center;
+    text-align: left;
+    gap: 40px;
 }
 
 header nav ul li {
@@ -50,17 +53,15 @@ header .sign-in {
     background-color: #ffffff;
     color: #000000;
     border: none;
-    padding: 10px 16px;
+    padding: 10px 8px;
     border-radius: 6px;
-    font-size: 17px;
 }
 header .sign-up {
     background-color: #ffffff;
     color: #000000;
     border: 1px solid #c6cace;
-    padding: 10px 16px;
+    padding: 8px 8px;
     border-radius: 6px;
-    font-size: 17px;
 }
 header a:hover,
 header .sign-in:hover,
@@ -70,13 +71,21 @@ header .sign-up:hover {
 }
 
 .container {
-    margin-left: 100px;
+    margin-top: -10px;
+    margin-left: 320px;
+    margin-right: 0;
+    padding: 0;
 }
 
-.text h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
+
+
+
+
+
+
+
+
+
 
 .text {
     display: flex;
@@ -85,27 +94,35 @@ header .sign-up:hover {
 }
 
 .text h1 {
+    margin-bottom: 20px;
     padding-top: 110px;
     font-weight: 700;
-    font-size: 75px;
+    font-size: 64px;
 }
 
 .text p {
-    width: 950px;
-    font-size: 20px;
+    width: 1100px;
+    font-size: 18px;
     text-align: center;
     margin: 30px 0;
 }
 
 .text a button {
-    background-color: #0d1117;
+    background-color: #252525;
     color: #ffffff;
     border: none;
     padding: 15px 25px;
     border-radius: 8px;
-    font-size: 23px;
+    font-size: 20px;
     cursor: pointer;
 }
+
+
+
+
+
+
+
 
 
 
@@ -291,4 +308,176 @@ details[open] summary span {
 .box-claster .box3 .dop-item {
     font-size:16px;
     display: contents;
+}
+
+
+
+
+
+
+
+
+
+
+
+.nav-item-dropdown {
+    position: relative;
+}
+
+.mega-menu {
+    display: none;
+    position: absolute;
+    top: 30%;
+    background: white;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149,157,165,0.2);
+    padding: 24px;
+    z-index: 100;
+    margin-top: 20px;
+    width: 600px;
+    
+}
+
+.nav-item-dropdown:hover .mega-menu {
+    display: block;
+}
+
+.menu-grid {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 180px;
+    text-align: left;
+}
+
+.explore-col {
+    border-left: 1px solid #d1d5da;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+.explore-col a {
+    margin-top: 20000px;
+}
+
+.menu-column h3 {
+    font-size: 12px;
+    color: #57606a;
+    margin-bottom: 12px;
+}
+
+.menu-item:hover .item-title,
+.menu-item:hover .item-desc {
+    color: #0969da;
+}
+
+.simple-link {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2328;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+
+.simple-link:hover,
+.explore-col a:hover,
+.menu-footer a:hover {
+    color: #0969da;
+}
+
+.menu-item {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2328;
+    transition: color 0.2s;
+}
+
+.item-desc {
+    font-size: 12px;
+    color: #57606a;
+}
+
+.new {
+    font-size: 10px;
+    color: #0969da;
+    padding: 2px 6px;
+}
+
+.menu-footer {
+    margin-top: 20px;
+    border-top: 1px solid #d1d5da;
+    text-align: left;
+    background-color: rgb(216, 214, 214);
+    padding: 10px;
+    width: 109%;
+    margin: 0 -25px;
+    margin-bottom: -25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.compare-main-title {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 600;
+    margin: 80px 0 40px 0;
+    color: #1f2328;
+}
+
+.compare-section-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto 100px auto;
+}
+
+.compare-card {
+    border: 1px solid #d1d5da;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer;
+}
+
+.compare-card:hover {
+    box-shadow: 0 12px 28px rgba(149,157,165,0.2); 
+    transform: scale(1.03); 
+}
+
+.compare-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1f2328;
+    transition: color 0.2s;
+}
+
+.card-desc {
+    font-size: 16px;
+    color: #57606a;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2328;
 }
