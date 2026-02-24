@@ -1,0 +1,20 @@
+<header>
+  <h1>Online Store</h1>
+  <nav class="category-nav">
+    @for (cat of categories; track cat.id) {
+      <button 
+        (click)="selectCategory(cat.id)" 
+        [class.active]="cat.id === selectedCategoryId">
+        {{ cat.name }}
+      </button>
+    }
+  </nav>
+</header>
+
+<main>
+  @if (selectedCategoryId) {
+    <app-product-list [products]="filteredProducts"></app-product-list>
+  } @else {
+    <div class="welcome">Please select a category to see products.</div>
+  }
+</main>
