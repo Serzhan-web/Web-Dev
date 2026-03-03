@@ -1,0 +1,122 @@
+.albums-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #0a0a0a;
+  border: 1px solid #0f0;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.loading-message {
+  color: #0f0;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2rem;
+  animation: blink 1s infinite;
+}
+
+.error-message {
+  color: #f00;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #f00;
+  text-shadow: 0 0 5px #f00;
+}
+
+.albums-title {
+  color: #0f0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #0f0;
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.albums-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.album-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  background-color: rgba(0, 255, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.album-item:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px #0f0;
+  transform: translateX(5px);
+}
+
+.album-link {
+  color: #0f0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  flex-grow: 1;
+  padding: 0.25rem 0;
+}
+
+.album-link:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 8px #0f0;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #f00;
+  color: #f00;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+}
+
+.delete-btn:hover {
+  background-color: #f00;
+  color: #000;
+  box-shadow: 0 0 10px #f00;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 600px) {
+  .albums-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .album-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+  }
+
+  .albums-title {
+    font-size: 1.5rem;
+  }
+}

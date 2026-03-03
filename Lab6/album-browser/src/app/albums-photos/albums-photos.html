@@ -1,0 +1,12 @@
+<div class="photos-container">
+  <div *ngIf="loading" class="loading-message">> LOADING_PHOTOS.EXE...</div>
+
+  <div *ngIf="!loading" class="photo-grid">
+    <div *ngFor="let photo of photos" class="photo-card">
+      <img [src]="photo.url" [alt]="photo.title" class="photo-img">
+      <p class="photo-title">{{ photo.title }}</p>
+    </div>
+  </div>
+
+  <a routerLink="/albums" class="back-link"><< Back to Albums</a>
+</div>

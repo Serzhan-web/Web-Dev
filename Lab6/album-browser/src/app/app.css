@@ -1,0 +1,43 @@
+.darknet-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+}
+
+.nav-link {
+  color: #0f0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  background-color: transparent;
+}
+
+.nav-link:hover {
+  background-color: #0f0;
+  color: #000;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.nav-link.active {
+  background-color: #0f0;
+  color: #000;
+  box-shadow: 0 0 15px #0f0;
+  font-weight: bold;
+}
+
+.darknet-hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0f0, transparent);
+  box-shadow: 0 0 10px #0f0;
+  margin: 1rem 0;
+  opacity: 0.8;
+}

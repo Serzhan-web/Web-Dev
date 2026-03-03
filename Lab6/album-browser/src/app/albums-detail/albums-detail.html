@@ -1,0 +1,41 @@
+<div class="detail-container">
+  <div *ngIf="loading" class="loading">
+    <span class="blink">>_ Loading album details...</span>
+  </div>
+
+  <div *ngIf="!loading && album; else notFound" class="album-card">
+    <h2 class="glitch-small">Album ID: {{ album.id }} {{ album.id }}</h2>
+    <p><span class="label">User ID:</span> {{ album.userId }}</p>
+
+    <div class="edit-section">
+      <label for="title" class="label">Title:</label>
+      <input 
+        id="title" 
+        [(ngModel)]="album.title" 
+        placeholder="Enter album title" 
+        class="darknet-input"
+      >
+      <button (click)="saveAlbum()" class="darknet-btn">Save</button>
+    </div>
+
+    <hr class="darknet-hr">
+
+    <nav class="detail-nav">
+      <a [routerLink]="['/albums', album.id, 'photos']" class="nav-link">
+        View Photos
+      </a>
+      <a routerLink="/albums" class="nav-link">
+        Back to list
+      </a>
+    </nav>
+  </div>
+
+  <ng-template #notFound>
+    <div *ngIf="!loading" class="not-found">
+      <p class="error-message">⚠ Album not found!</p>
+      <a routerLink="/albums" class="nav-link">Back to the list</a>
+    </div>
+  </ng-template>
+
+  <a routerLink="/albums" class="back-link"><< Back to Albums</a>
+</div>
