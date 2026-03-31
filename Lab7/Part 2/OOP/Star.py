@@ -3,13 +3,13 @@ from CelestialBody import CelestialBody
 class Star(CelestialBody):
     def __init__(self, name, mass, radius, temperature):
         super().__init__(name, mass, radius)
-        self.temperature = temperature
+        self._temperature = temperature
 
     def __str__(self):
-        return f"{super().__str__()} | Temp: {self.temperature}K"
+        return super().__str__() + " | Temp: " + str(self._temperature) + "K"
 
     def get_spectral_class(self):
-        t = self.temperature
+        t = self._temperature
         if t >= 30000: return "O"
         if t >= 10000: return "B"
         if t >= 7500: return "A"

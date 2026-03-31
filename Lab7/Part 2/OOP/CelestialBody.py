@@ -2,13 +2,15 @@ import math
 
 class CelestialBody:
     def __init__(self, name, mass, radius):
-        self.name = name
-        self.mass = mass
-        self.radius = radius
+        self._name = name
+        self._mass = mass
+        self._radius = radius
 
     def calculate_density(self):
-        volume = (4/3) * math.pi * (self.radius ** 3)
-        return self.mass / volume if volume != 0 else 0
+        volume = (4/3) * math.pi * (self._radius ** 3)
+        if volume == 0:
+            return 0
+        return self._mass / volume
 
     def __str__(self):
-        return f"{self.name} (M:{self.mass}, R:{self.radius})"
+        return self._name + " (M:" + str(self._mass) + ", R:" + str(self._radius) + ")"
