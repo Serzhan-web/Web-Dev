@@ -1,74 +1,63 @@
 from django.http import JsonResponse
-from django.views.decorators.http import require_GET
+from django.shortcuts import get_object_or_404
 from .models import Product, Category
 
 
-def product_to_dict(product):
-    return {
-        'id': product.id,
-        'name': product.name,
-        'price': product.price,
-        'description': product.description,
-        'count': product.count,
-        'is_active': product.is_active,
-        'rating': product.rating,
-        'image': product.image,
-        'images': [product.image, product.image, product.image],
-        'link': product.link,
-        'likes': 0,
-        'categoryId': product.category.id,
-        'category': {
-            'id': product.category.id,
-            'name': product.category.name,
-        }
-    }
-
-
-def category_to_dict(category):
-    return {
-        'id': category.id,
-        'name': category.name,
-    }
-
-
-@require_GET
 def product_list(request):
-    products = Product.objects.select_related('category').all()
-    data = [product_to_dict(p) for p in products]
+    products = Product.objects.all()
+    data = [
+        {
+            "id": p.id,
+            "name": p.name,
+            "price": p.price,
+            "description": p.description,
+            "count": p.count,
+            "is_active": p.is_active,
+            "category": p.category.name if p.category else None
+        }
+        for p in products
+    ]
     return JsonResponse(data, safe=False)
 
 
-@require_GET
 def product_detail(request, id):
-    try:
-        product = Product.objects.select_related('category').get(id=id)
-        return JsonResponse(product_to_dict(product))
-    except Product.DoesNotExist:
-        return JsonResponse({'error': 'Product not found'}, status=404)
+    product = get_object_or_404(Product, id=id)
+    data = {
+        "id": product.id,
+        "name": product.name,
+        "price": product.price,
+        "description": product.description,
+        "count": product.count,
+        "is_active": product.is_active,
+        "category": product.category.name if product.category else None
+    }
+    return JsonResponse(data)
 
 
-@require_GET
 def category_list(request):
     categories = Category.objects.all()
-    data = [category_to_dict(c) for c in categories]
+    data = [{"id": c.id, "name": c.name} for c in categories]
     return JsonResponse(data, safe=False)
 
 
-@require_GET
 def category_detail(request, id):
-    try:
-        category = Category.objects.get(id=id)
-        return JsonResponse(category_to_dict(category))
-    except Category.DoesNotExist:
-        return JsonResponse({'error': 'Category not found'}, status=404)
+    category = get_object_or_404(Category, id=id)
+    data = {"id": category.id, "name": category.name}
+    return JsonResponse(data)
 
 
-@require_GET
-def products_by_category(request, id):
-    try:
-        category = Category.objects.get(id=id)
-        products = Product.objects.select_related('category').filter(category=category)
-        data = [product_to_dict(p) for p in products]
-        return JsonResponse(data, safe=False)
-    except Category.DoesNotExist:
-        return JsonResponse({'error': 'Category not found'}, status=404)
+def category_products(request, id):
+    category = get_object_or_404(Category, id=id)
+    products = category.products.all()
+    data = [
+        {
+            "id": p.id,
+            "name": p.name,
+            "price": p.price,
+            "description": p.description,
+            "count": p.count,
+            "is_active": p.is_active,
+        }
+        for p in products
+    ]
+    return JsonResponse(data, safe=False)
